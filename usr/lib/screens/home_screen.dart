@@ -17,12 +17,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _earthquakesFuture = _usgsService.fetchSignificantEarthquakesPastWeek();
+    _earthquakesFuture = _usgsService.fetchRecentEarthquakes();
   }
 
   Future<void> _refresh() async {
     setState(() {
-      _earthquakesFuture = _usgsService.fetchSignificantEarthquakesPastWeek();
+      _earthquakesFuture = _usgsService.fetchRecentEarthquakes();
     });
   }
 
